@@ -1,3 +1,7 @@
+.coloured {
+    color: red;
+}
+
 #container {
     display: flex;
     flex-wrap: wrap;
@@ -5,5 +9,7 @@
 
 div {
     width: 25%;
+    border: thin solid black;
     box-sizing: border-box;
 }
+
