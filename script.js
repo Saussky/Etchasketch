@@ -13,30 +13,37 @@ function createDivs(n) {
 }
 createDivs(16);
 
-const sections = document.querySelectorAll('.box');
-console.log(sections);
+
 
 // Every div will wait for the mouse to hover over it, and if it does it will turn red
-sections.forEach((div) => {
-    div.addEventListener("mouseenter",  function (e) {
-        capture: false;
-        e.stopPropagation;
-        div.classList.add('coloured');
+
+function makeHoverable() {
+    const sections = document.querySelectorAll('.box');
+
+    sections.forEach((div) => {
+        div.addEventListener("mouseenter",  function (e) {
+            capture: false;
+            e.stopPropagation;
+            div.classList.add('coloured');
+        });
     });
-});
+}
 
 
 // on button click come up with a prompt
 
-
 document.querySelector('button').onclick = function getInput() {
     let x = prompt("How many blocks");
-    console.log(x);
 
+    // clear the last divs
     deletThis = document.querySelectorAll('.box');
     deletThis.forEach(grid => {
         grid.remove();
     });
 
+    // create new divs with user answer
     createDivs(x);
+    // make them change colour on mouse hover
+    makeHoverable();
+
 }
