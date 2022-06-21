@@ -1,0 +1,9 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div {
+    width: 25%;
+    box-sizing: border-box;
+}
